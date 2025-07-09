@@ -4,39 +4,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>FameBooster Services</title>
-<style>
-  body {
-    background-color: #f4f4f8;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
-  }
-  h1 {
-    color: #0073e6;
-  }
-  form {
-    margin-top: 20px;
-  }
-  input, button {
-    margin: 5px;
-    padding: 8px;
-    width: 200px;
-  }
-</style>
+  <title>FameBooster</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f6f8;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #111827;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+    }
+    nav a {
+      color: #9ca3af;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: white;
+    }
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(to right, #6366f1, #3b82f6);
+      color: white;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .form-container {
+      background-color: white;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    form input, form select, form button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #d1d5db;
+      font-size: 1rem;
+    }
+    form button {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #2563eb;
+    }
+    footer {
+      background-color: #111827;
+      color: #9ca3af;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-<h1>Boost Your Social Media Like a Pro 🚀</h1>
-  <p>Boost your social media presence using our SMM panel integration.</p>
+  <header>
+    <h1>FameBooster</h1>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#order">Order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <form id="orderForm">
-    <label>Service ID: <input type="text" id="service" /></label><br />
-    <label>Link: <input type="text" id="link" /></label><br />
-    <label>Quantity: <input type="number" id="quantity" /></label><br />
-    <button type="submit">Place Order</button>
-  </form>
+  <section class="hero">
+    <h1>Boost Your Social Media Presence Instantly</h1>
+    <p>Reliable SMM services for Instagram, YouTube, TikTok, Facebook, and more — powered by real-time API integration.</p>
+  </section>
 
-  <pre id="response"></pre>
+  <section id="services" class="section">
+    <h2>Popular Services</h2>
+    <p>Instagram Likes, YouTube Views, TikTok Followers, Facebook Page Likes, and more.</p>
+  </section>
+
+  <section id="order" class="section">
+    <h2>Place an Order</h2>
+    <div class="form-container">
+      <form id="orderForm">
+        <select id="service">
+          <option value="101">Instagram Likes</option>
+          <option value="102">YouTube Views</option>
+          <option value="103">TikTok Followers</option>
+        </select>
+        <input type="text" id="link" placeholder="Post/Video Link" required />
+        <input type="number" id="quantity" placeholder="Quantity" required />
+        <button type="submit">Submit Order</button>
+      </form>
+      <pre id="response"></pre>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Email: support@famebooster.com</p>
+    <p>Telegram: @FameBoosterSupport</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 FameBooster. All rights reserved.</p>
+  </footer>
 
   <script>
     document.getElementById("orderForm").addEventListener("submit", async function(e) {
